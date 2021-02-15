@@ -1,0 +1,15 @@
+name: "UI"
+widgets:
+  - type: text
+    x: 0
+    y: 0
+    fontsize: 40
+    color: "#FF0000"
+    data: health
+  - type: text
+    x: 100
+    y: 400
+    fontsize: 20
+    color: "#00FF00"
+    data: str
+

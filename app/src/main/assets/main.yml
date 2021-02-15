@@ -1,0 +1,37 @@
+title: 示例标题
+variables: [health,length,str]
+init:
+  action: [var]
+  param: ["health:0"]
+stage:
+  "1.1":
+    chapter: 示例章节
+    story: |-
+      > dd
+    choices:
+      - keyword: "a"
+        description: ""
+        action: [incr]
+        param: ["health"]
+      - keyword: "b"
+        description: ""
+        action: [decr]
+        param: ["health"]
+  "1.2":
+    chapter: 示例章节2
+    story: 示例剧情2
+    choices:
+      - keyword: "3号"
+        description: ""
+        action: [var,var]
+        param: ["length:45","str:Hello,world!"]
+      - keyword: "4号"
+        description: ""
+        action: [goto]
+        param: ["1.2"]
+dynamic:
+  - condition:
+      chapter: "1.*"
+      expression: "health>5"
+    action: [goto]
+    param: ["1.2"]
